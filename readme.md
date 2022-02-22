@@ -45,11 +45,13 @@ So it is important to know which kind of characteristics suit your need then cho
 
 ## File structure
 
+```
 ├───catkin_ws
    ├───src
       ├───darknet_ros
       └───yolo_detection
              └───launch
+```
 
 The ROS package `darknet_ros` was cloned from the GitHub page under the `./catkin_ws/src` folder.
 
