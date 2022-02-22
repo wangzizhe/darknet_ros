@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+	<!-- Different models can be chosen based on use cases. Here the YOLOv3 will be used. -->
+	
+	<!-- .yaml file stores the hyperparameters of the model, e.g. if you want to use yolov3-tiny for higher speed then change "yolov3.yaml to "yolov2-tiny.yaml". -->
+	<arg name="network_param_file"	default="$(find darknet_ros)/config/yolov3.yaml"/>
+
+	<!-- Here is the topic name, e.g. we have the topic name as "/camera/lane_detector/modified" -->
+	<arg name="image" default="/camera/lane_detector/modified"/>
+
+	<!-- Include main launch file -->
+	<include file="$(find darknet_ros)/launch/darknet_ros.launch">
+		<arg name="network_param_file" value="$(arg network_param_file)"/>
+		<arg name="image" value="$(arg image)"/>
+	</include>
+
+</launch>
